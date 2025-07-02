@@ -30,13 +30,10 @@ const createNew = async (req, res, next) => {
     next() //validate data hợp lệ thì cho request đến bước controller
   } catch (error) {
     const errorMessage = error.message
-    // const errorMessage2 = new Error(error).message
-
     const customError = new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, errorMessage)
-    // const customError2 = new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, errorMessage2)
-
 
     console.log('Invalid request:', error)
+
     next(customError)
   }
 }
