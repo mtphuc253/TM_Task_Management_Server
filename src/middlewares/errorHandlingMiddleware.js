@@ -24,6 +24,6 @@ export const errorHandlingMiddleware = (err, req, res, next) => {
   // ...
   // console.error(responseError)
 
-  // Trả responseError về phía Front-end
+  // Trả responseError về phía FrontEnd
   res.status(responseError.statusCode).json(responseError)
 }
